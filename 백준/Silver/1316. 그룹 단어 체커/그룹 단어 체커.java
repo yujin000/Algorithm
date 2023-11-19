@@ -1,10 +1,11 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
 	static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-	public static void main(String src[]) throws Exception {
+	public static void main(String src[]) throws IOException {
 
 		int N = Integer.parseInt(br.readLine());
 		int count = 0;
@@ -16,7 +17,7 @@ public class Main {
 		System.out.println(count);
 	}
 
-	public static boolean check() throws Exception {
+	public static boolean check() throws IOException {
 		boolean[] check = new boolean[26];
 		String s = br.readLine();
 		int pre = 0;
