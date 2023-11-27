@@ -14,7 +14,7 @@ public class Main {
 
 		while (N > 0) {
 			if (N % B < 10) {
-				sb.append((char) ((N % B) + '0'));
+				sb.append(N % B);
 			} else {
 				sb.append((char) ((N % B) + 'A' - 10));
 			}
