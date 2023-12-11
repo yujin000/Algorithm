@@ -10,7 +10,8 @@ public class Main {
 		LinkedList<Integer> list = new LinkedList<>();
 
 		int N = Integer.parseInt(br.readLine());
-
+		br.close();
+		
 		for (int i = 1; i <= N; i++) {
 			list.add(i);
 		}
