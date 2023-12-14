@@ -14,13 +14,14 @@ public class Main {
 
 			if (isValid(s)) {
 				System.out.println("YES");
-			} else
+			} else {
 				System.out.println("NO");
+			}
 		}
 	}
 
 	private static boolean isValid(String s) {
-		Stack<Character> stack = new Stack();
+		Stack<Character> stack = new Stack<>();
 
 		for (char c : s.toCharArray()) {
 			if (c == '(') {
