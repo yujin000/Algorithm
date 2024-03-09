@@ -1,0 +1,19 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+	public static void main(String src[]) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		int arr[] = new int[5];
+		int result = 0;
+		for (int i = 0; i < 5; i++) {
+			arr[i] = (int) Math.pow(Integer.parseInt(st.nextToken()), 2);
+			result += arr[i];
+		}
+		System.out.println(result%10);
+	}
+}
