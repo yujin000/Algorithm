@@ -8,7 +8,6 @@ class Solution {
                 list.add(i);
             }
         }
-        Collections.sort(list);
         int[] answer;
         
         if(list.isEmpty()){
@@ -19,6 +18,8 @@ class Solution {
                 answer[i] = list.get(i);
             }
         }
+        
+        Arrays.sort(answer);
         return answer;
     }
 }
