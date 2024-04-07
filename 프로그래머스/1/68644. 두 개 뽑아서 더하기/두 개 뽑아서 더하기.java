@@ -2,14 +2,12 @@ import java.util.*;
 
 class Solution {
     private int[] arr;
-    private boolean[] visit;
     private ArrayList<Integer> list;
     
     public int[] solution(int[] numbers) {
         arr = new int[2];
-        visit = new boolean[numbers.length];
         list = new ArrayList<>();
-        dfs(0, numbers);
+        dfs(0, numbers,0);
         int[] answer = new int[list.size()];
         for(int i = 0; i < list.size(); i++){
                 answer[i] = list.get(i);
@@ -18,7 +16,7 @@ class Solution {
         return answer;
     }
     
-    public void dfs(int depth, int[] numbers){
+    public void dfs(int depth, int[] numbers, int cur){
         if(depth==2){
             int sum = 0;
             for(int val: arr){
@@ -30,13 +28,9 @@ class Solution {
             return;
         }
         
-        for(int i=0;i<numbers.length;i++){
-            if(!visit[i]){
-                visit[i]=true;
+        for(int i=cur;i<numbers.length;i++){
                 arr[depth]= numbers[i];
-                dfs(depth+1, numbers);
-                visit[i]=false;
-            }
+                dfs(depth+1, numbers, i+1);
         }
     }
 }
