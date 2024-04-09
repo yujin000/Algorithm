@@ -14,14 +14,14 @@ class Solution {
             if(i==0){
                 answer = correctStack(queue);
             }else{
-                rotationQueue(queue,i);
+                rotationQueue(queue);
                 answer += correctStack(queue);
             }
         }
         return answer;
     }
     
-    private void rotationQueue(Queue<Character> queue, int num){
+    private void rotationQueue(Queue<Character> queue){
             char c = queue.poll();
             queue.offer(c);
     }
