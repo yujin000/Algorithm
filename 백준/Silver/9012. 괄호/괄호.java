@@ -6,29 +6,29 @@ import java.util.Stack;
 public class Main {
 	public static void main(String src[]) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-		int T = Integer.parseInt(br.readLine());
-
-		for (int i = 0; i < T; i++) {
+		StringBuilder sb = new StringBuilder();
+		
+		int N = Integer.parseInt(br.readLine());
+		
+		for(int i=0;i<N;i++) {
 			String s = br.readLine();
-
-			if (isValid(s)) {
-				System.out.println("YES");
-			} else {
-				System.out.println("NO");
-            }
+			if(isvalid(s)) {
+				sb.append("YES").append("\n");
+			}else {
+				sb.append("NO").append("\n");
+			}
 		}
+		System.out.println(sb);
 	}
-
-	private static boolean isValid(String s) {
+	
+	private static boolean isvalid(String s) {
 		Stack<Character> stack = new Stack<>();
-
-		for (char c : s.toCharArray()) {
-			if (c == '(') {
+		for(char c : s.toCharArray()) {
+			if(c=='(') {
 				stack.push(')');
-			} else if (!stack.empty() && stack.peek() == c) {
+			}else if(!stack.isEmpty()&&stack.peek()==c) {
 				stack.pop();
-			} else {
+			}else {
 				return false;
 			}
 		}
