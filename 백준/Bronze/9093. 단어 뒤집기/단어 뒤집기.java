@@ -20,9 +20,7 @@ public class Main {
 			while (st.hasMoreTokens()) {
 				String ss = st.nextToken();
 				StringBuilder splitSb = new StringBuilder();
-				for (int i = ss.length() - 1; i >= 0; i--) {
-					splitSb.append(ss.charAt(i));
-				}
+				splitSb.append(ss).reverse();
 				sb.append(splitSb).append(" ");
 			}
 			sb.append("\n");
