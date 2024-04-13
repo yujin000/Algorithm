@@ -3,27 +3,27 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.StringTokenizer;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		
+
 		int T = Integer.parseInt(br.readLine());
-		Deque<Character> deque = new ArrayDeque<>();
-		
-		while(T-->0) {
+
+		while (T-- > 0) {
 			String s = br.readLine();
-			String[] arr = s.split(" ");
-			for(int i=0; i<arr.length;i++) {
-				for(char c : arr[i].toCharArray()) {
-					deque.add(c);
+			StringTokenizer st = new StringTokenizer(s);
+
+			while (st.hasMoreTokens()) {
+				String ss = st.nextToken();
+				StringBuilder splitSb = new StringBuilder();
+				for (int i = ss.length() - 1; i >= 0; i--) {
+					splitSb.append(ss.charAt(i));
 				}
-				while(!deque.isEmpty()) {
-					sb.append(deque.pollLast());
-				}
-				sb.append(" ");
+				sb.append(splitSb).append(" ");
 			}
 			sb.append("\n");
 		}
