@@ -12,13 +12,13 @@ public class Main {
 
 		int N = Integer.parseInt(br.readLine());
 		int[] arr = new int[N];
+		int[] sortArr = new int[N];
 
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
-			arr[i] = Integer.parseInt(st.nextToken());
+			arr[i] = sortArr[i] = Integer.parseInt(st.nextToken());
 		}
 
-		int[] sortArr = arr.clone();
 		Arrays.sort(sortArr);
 
 		HashMap<Integer, Integer> hashMap = new HashMap<>();
