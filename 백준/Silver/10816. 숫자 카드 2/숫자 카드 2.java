@@ -10,24 +10,21 @@ public class Main {
 		StringBuilder sb = new StringBuilder();
 
 		int N = Integer.parseInt(br.readLine());
-		HashMap<Integer, Integer> hashMap = new HashMap<>();
 
 		StringTokenizer st = new StringTokenizer(br.readLine());
+		HashMap<Integer, Integer> hashMap = new HashMap<>();
+
 		for (int i = 0; i < N; i++) {
-			int target = Integer.parseInt(st.nextToken());
-			hashMap.put(target, hashMap.getOrDefault(target, 0) + 1);
+			int num = Integer.parseInt(st.nextToken());
+			hashMap.put(num, hashMap.getOrDefault(num, 0) + 1);
 		}
 
 		int M = Integer.parseInt(br.readLine());
 		st = new StringTokenizer(br.readLine());
 
 		for (int i = 0; i < M; i++) {
-			int target = Integer.parseInt(st.nextToken());
-			if (hashMap.containsKey(target)) {
-				sb.append(hashMap.get(target)).append(" ");
-			} else {
-				sb.append(0).append(" ");
-			}
+			int num = Integer.parseInt(st.nextToken());
+			sb.append(hashMap.getOrDefault(num, 0)).append(" ");
 		}
 		System.out.println(sb);
 	}
