@@ -2,15 +2,15 @@ import java.util.*;
 
 class Solution{
     public int solution(String s){
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
         for(char c : s.toCharArray()){
-            if(!stack.isEmpty()&&stack.peek()==c){
-                stack.pop();
+            if(!deque.isEmpty()&&deque.peek()==c){
+                deque.pop();
             }else{
-            stack.push(c);
+            deque.push(c);
             }
         }
         
-        return stack.isEmpty() ? 1 :0;
+        return deque.isEmpty() ? 1 :0;
     }
 }
