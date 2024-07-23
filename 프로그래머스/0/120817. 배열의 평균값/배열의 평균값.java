@@ -4,6 +4,7 @@ class Solution {
         for(double i : numbers){
             answer+=i;
         }
+        
         return answer/numbers.length;
     }
 }
